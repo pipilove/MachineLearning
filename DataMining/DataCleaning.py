@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-__title__ = 'Data Cleaning - noisy data:binning'
+__title__ = 'Data Cleaning - noisy items:binning'
 __author__ = '皮'
 __mtime__ = '10/31/2015-031'
 __email__ = 'pipisorry@126.com'
@@ -43,7 +43,7 @@ def smooth_by_mean(data, depth=5):
 def preprocess_data(data, depth=5):
     data.sort()
     data = np.array(data).reshape([-1, depth])
-    # print(data)
+    # print(items)
     return data
 
 
@@ -52,7 +52,7 @@ def smooth_by_median(data, depth=5):
     数据能完全等量划分时
     '''
     data = np.tile(np.median(data, 1).reshape((-1, 1)), reps=depth)
-    # print(data)
+    # print(items)
     return data
 
 

@@ -108,10 +108,10 @@ def PlotDecisionTree(clf):
     # 彩色完整图
     tree.export_graphviz(clf, out_file=dot_data, feature_names=GlobalOptions.feature_names,
                          class_names=GlobalOptions.target_names, filled=True, rounded=True, special_characters=True,
-                         label='root')
+                         label='robot')
     # 黑白有深度图
     # tree.export_graphviz(clf, out_file=dot_data, feature_names=GlobalOptions.feature_names,
-    #                      class_names=GlobalOptions.target_names, rounded=True, special_characters=True, label='root',
+    #                      class_names=GlobalOptions.target_names, rounded=True, special_characters=True, label='robot',
     #                      max_depth=5)
 
     graph = pydot.graph_from_dot_data(dot_data.getvalue())

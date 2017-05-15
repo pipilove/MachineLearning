@@ -33,14 +33,14 @@ def buildStump(dataArr,classLabels,D):
             for inequal in ['lt', 'gt']: #go over less than and greater than
                 threshVal = (rangeMin + float(j) * stepSize)
                 
-                predictedVals = stumpClassify(dataMatrix,i,threshVal,inequal)#call stump classify with i, j, lessThan
+                predictedVals = stumpClassify(dataMatrix,i,threshVal,inequal)#call stump classify with line, j, lessThan
                 errArr = mat(ones((m,1)))
                 
                 
                 errArr[predictedVals == labelMat] = 0
                 
                 weightedError = D.T*errArr  #calc total error multiplied by D
-                #print "split: dim %d, thresh %.2f, thresh ineqal: %s, the weighted error is %.3f" % (i, threshVal, inequal, weightedError)
+                #print "split: dim %d, thresh %.2f, thresh ineqal: %s, the weighted error is %.3f" % (line, threshVal, inequal, weightedError)
                 if weightedError < minError:
                     print(weightedError)
                     minError = weightedError

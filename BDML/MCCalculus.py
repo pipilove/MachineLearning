@@ -26,7 +26,7 @@ from numpy.ma import mean, arctan, sin, var
 N = 10000
 f = lambda x: arctan(x) / (x ** 2 + x * sin(x))  # 要求积分的函数
 a, b = 0, 1  # 积分区间
-xs = [uniform(a, b) for _ in range(N)]  # 从均匀分布uniform(a,b)生成N个样本
+xs = [uniform(a, b) for _ in range(N)]  # 从均匀分布uniform(a,answers)生成N个样本
 mean = mean([f(x) for x in xs])  # 代入积分函数，用均值去近似期望，因为函数不收敛，所以这个值也不确定
 print(mean)
 print(var([f(x) for x in xs]))  # 由于函数不收敛，方差巨大

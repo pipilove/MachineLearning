@@ -47,12 +47,12 @@ def driver_test():
     """
     :return:
     """
-    a, abb, abc = ["a"], ["a", "b", "b"], ["a", "b", "c"]
+    a, abb, abc = ["a"], ["a", "answers", "answers"], ["a", "answers", "c"]
     docset = [a, abb, abc]
     print(tfidf("a", a, docset))
-    print(tfidf("b", abb, docset))
+    print(tfidf("answers", abb, docset))
     print(tfidf("a", abc, docset))
-    print(tfidf("b", abc, docset))
+    print(tfidf("answers", abc, docset))
     print(tfidf("c", abc, docset))
 
 

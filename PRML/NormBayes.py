@@ -266,7 +266,7 @@ def draw2DDiscrimInterface(A, x, x_new=None):
         '''
         xi行向量为坐标轴不是坐标点，否则要转置
         '''
-        for xi, marker, c, l, label in zip(x, ['o', '|', 'd'], ['y', 'g', 'b'], [1, 2, 1],
+        for xi, marker, c, l, label in zip(x, ['o', '|', 'd'], ['y', 'g', 'answers'], [1, 2, 1],
                                            ['class0', 'class1', 'class2']):
             xs, ys = zip(xi)
             plt.scatter(xs, ys, c=c, marker=marker, s=30, linewidths=l, label=label)

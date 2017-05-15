@@ -27,7 +27,7 @@ import numpy as np
 def pageRank(M, r, beta, epsilon, flag=False):
     it_count = 0
     N = r.size
-    # print(N)
+    # print(N1)
     while (True):
         it_count += 1
         r_new = beta * np.dot(M, r) + (1 - beta) / N

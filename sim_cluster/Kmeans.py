@@ -31,13 +31,13 @@ MLCOMP_DIR = r'./datasets'
 groups = ['comp.graphics', 'comp.os.ms-windows.misc']   #仅用于小数据测试时用
 # groups = ['comp.graphics', 'comp.os.ms-windows.misc', 'comp.sys.ibm.pc.hardware', 'comp.sys.ma c.hardware', 'comp.windows.x', 'sci.space']  # 中量数据时用
 train_dataset_bunch = datasets.load_mlcomp(name_or_id='20news-18828', set_='train', mlcomp_root=MLCOMP_DIR,categories=groups)  #<class 'sklearn.datasets.base.Bunch'>
-# print(type(train_dataset_bunch.data)) #list
-# print(type(train_dataset_bunch.data[0]))  #bytes
+# print(type(train_dataset_bunch.items)) #list
+# print(type(train_dataset_bunch.items[0]))  #bytes
 # print(len(train_dataset_bunch.filenames)) # #posts=3414
 
 
 """
-fit_transform dataset.data into train_dataset_mats
+fit_transform dataset.items into train_dataset_mats
 """
 Vectorizer = StemmedTfidfVectorizer
 vectorizer = Vectorizer(decode_error='ignore', stop_words='english', min_df=10, max_df=0.5)
@@ -77,7 +77,7 @@ print(("Silhouette Coefficient: %0.3f\n" %
 LanguageAnalysis test_post
 """
 test_post = \
-    """Disk drive problems. Hi, I have a problem with my hard disk.After 1 year it is working only sporadically now.I tried to format it, but now it doesn't boot any more.Any ideas? Thanks."""
+    """Disk drive problems. Hi, I have a problem with my hard disk.After 1 year it is working only sporadically now.I tried to format it, but now it doesn'm boot any more.Any ideas? Thanks."""
 test_data_mat = vectorizer.transform([test_post])
 test_post_labels = km.predict(test_data_mat)  # ndarray
 test_post_label = test_post_labels[0]

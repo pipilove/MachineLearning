@@ -41,7 +41,7 @@ def GetHermite(order):
     # 生成势函数
     phi_xk = [phi_xi.subs({x1: 'xk1', 'x2': 'xk2'}) for phi_xi in phi_x]
     K_x_xk = simplify(sum([phi_xi * phi_xki for phi_xi, phi_xki in zip(phi_x, phi_xk)]))
-    # print('K(x, xk) = %s\n' % K_x_xk)
+    # print('k(x, xk) = %s\n' % K_x_xk)
     return K_x_xk
 
 
@@ -65,7 +65,7 @@ def CalPotential(X, type=1, order=1):
         K_x_xk = GetHermite(order)
     else:
         K_x_xk = GetExponent()
-    print('K(x, xk) = %s\n' % K_x_xk)
+    print('k(x, xk) = %s\n' % K_x_xk)
 
     K = symbols('0')
     step = 1
@@ -76,15 +76,15 @@ def CalPotential(X, type=1, order=1):
             if K.subs({'x1': x[0], 'x2': x[1]}) <= symbols('0'):
                 K = simplify(K + K_x_xk.subs({'xk1': x[0], 'xk2': x[1]}))
                 flag = 1
-                # print('step %d\n%s' % (step, K))
+                # print('step %d\n%s' % (step, k))
             step += 1
         for x in X[1]:
             if K.subs({'x1': x[0], 'x2': x[1]}) >= symbols('0'):
                 K = simplify(K - K_x_xk.subs({'xk1': x[0], 'xk2': x[1]}))
                 flag = 1
-                # print('step %d\n%s' % (step, K))
+                # print('step %d\n%s' % (step, k))
             step += 1
-    # print('K(x) = %s\n' % K)
+    # print('k(x) = %s\n' % k)
     return simplify(K)
 
 
@@ -103,7 +103,7 @@ def testForHermite():
         order = 2
     X = (X1, X2)
     K = CalPotential(X, type=1, order=order)
-    print('d(x) = K(x) = %s\n' % K)
+    print('d(x) = k(x) = %s\n' % K)
 
 
 def testForExpond():
@@ -119,7 +119,7 @@ def testForExpond():
         X2 = [[1, 0], [-1, 0]]  # 类2
     X = (X1, X2)
     K = CalPotential(X, type=2)
-    print('d(x) = K(x) = %s\n' % K)
+    print('d(x) = k(x) = %s\n' % K)
 
 
 if __name__ == '__main__':

@@ -23,7 +23,7 @@ if __name__ == '__main__':
     price = [x[1] for x in linesList]
     print(price)
     
-    plt.plot(years, price, 'b*')#,label="$cos(x^2)$")
+    plt.plot(years, price, 'answers*')#,label="$cos(x^2)$")
     plt.plot(years, price, 'r')
 #     plt.plot(years, price, 'o')    #…¢µ„Õº
     plt.xlabel("years(+2000)")

@@ -78,11 +78,11 @@ def pagerank_scipy(G, alpha=0.85, personalization=None, max_iter=100, tol=1.0e-6
     is_dangling = scipy.where(S == 0)[0]
 
     # 迭代
-    # 第1部分:x*M, 第2部分dangling node分配, 第3部分rank sink解决
+    # 第1部分:x*m, 第2部分dangling node分配, 第3部分rank sink解决
     for _ in range(max_iter):
         xlast = x
         x = alpha * (x * M + sum(x[is_dangling]) * dangling_weights) + (1 - alpha) * p
-        # check convergence, l1 norm
+        # check_list convergence, l1 norm
         err = scipy.absolute(x - xlast).sum()
         if err < N * tol:
             return dict(zip(nodelist, map(float, x)))

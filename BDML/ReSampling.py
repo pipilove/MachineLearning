@@ -159,7 +159,7 @@ def boosting_sintree(data_arr, class_labels):
 
 if __name__ == '__main__':
     data_arr, class_labels = loadSimpData()
-    print("origin data: \n {}\norigin data labels:\n{}".format(data_arr, class_labels))
+    print("origin items: \n {}\norigin items labels:\n{}".format(data_arr, class_labels))
     plt.scatter(data_arr[:, 0], data_arr[:, 1], c=class_labels)
     for i, class_label in enumerate(class_labels):
         plt.annotate(class_label, (data_arr[:, 0][i], data_arr[:, 1][i]))

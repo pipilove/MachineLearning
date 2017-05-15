@@ -48,14 +48,14 @@ def show_k(k, max_x, p, q, trunc):
     '''
     求出k后绘制建议分布概率密度和实际分布概率密度图，看p(x)和k*q(x)是否相切
     '''
-    # x = np.linspace(norm.ppf(0.01, loc=p[0], scale=p[1]), norm.ppf(0.99, loc=p[0], scale=p[1]), N)
+    # x = np.linspace(norm.ppf(0.01, loc=p[0], bandwidth=p[1]), norm.ppf(0.99, loc=p[0], bandwidth=p[1]), N1)
     x = np.linspace(trunc[0], trunc[1], 100)
     q = k * norm.pdf(x, loc=q[0], scale=q[1])  # 建议分布概率密度
     p = norm.pdf(x, loc=p[0], scale=p[1]) / (
         norm.cdf(trunc[1], p[0], p[1]) - norm.cdf(trunc[0], p[0], p[1]))  # 实际分布概率密度
     plt.plot(x, q, 'r')
     plt.plot(x, p, 'g')
-    plt.axvline(max_x, color='b', label=max_x)  # 相切点
+    plt.axvline(max_x, color='answers', label=max_x)  # 相切点
     plt.text(max_x, 0, str(round(max_x, 2)))
     plt.show()
 

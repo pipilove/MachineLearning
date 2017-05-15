@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-__title__ = 'Descriptive data summarization - homework1'
+__title__ = 'Descriptive items summarization - homework1'
 __author__ = '皮'
 __mtime__ = '10/29/2015-029'
 __email__ = 'pipisorry@126.com'

@@ -38,7 +38,7 @@ print("eigvalue: \n{}\neigvec: \n{}\n".format(eigvalue, eigvec))
 # 计算mmt的非0特征值对应的特征向量
 eigvec_1 = M.dot(eigvec[:, 0])
 eigvec_2 = M.dot(eigvec[:, 1])
-print("M.dot(eigvec)\n{}".format(M.dot(eigvec)))
+print("m.dot(eigvec)\n{}".format(M.dot(eigvec)))
 
 # 计算mmt的特征值和特征向量
 mmt = M.dot(M.T)
@@ -51,5 +51,5 @@ print("********", (eigvec ** 2).sum(axis=0), "********\n")
 # 比较非0特征向量是否计算正确，与直接计算得到的某个特征向量成比例就对上了
 print(eigvec_1 / eigvec.T[1])
 print(eigvec_2 / eigvec.T[0])
-# print([i / eigvec_1 for i in eigvec.T])
-# print([i / eigvec_2 for i in eigvec.T])
+# print([line / eigvec_1 for line in eigvec.T])
+# print([line / eigvec_2 for line in eigvec.T])

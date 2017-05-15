@@ -30,7 +30,7 @@ english_stemmer = nltk.stem.SnowballStemmer('english')
 
 class StemmedCountVectorizer(CountVectorizer):
     """
-    stem the posts before we feed them into CountVectorizer.overwrite the method build_analyzer.
+    stem the posts before we feed them into CountVectorizer.overwrite the METHOD build_analyzer.
     """
 
     def build_analyzer(self):
@@ -40,7 +40,7 @@ class StemmedCountVectorizer(CountVectorizer):
 
 class StemmedTfidfVectorizer(TfidfVectorizer):
     """
-    stem the posts before we feed them into TfidfVectorizer.overwrite the method build_analyzer.
+    stem the posts before we feed them into TfidfVectorizer.overwrite the METHOD build_analyzer.
     """
 
     def build_analyzer(self):  # ×¢ÊÍµô¼´³ÉÎªÆÕÍ¨TfidfVectorizer
@@ -53,7 +53,7 @@ def convert():
     """
     Converting raw text into a bag-of-words & Counting words
     """
-    DIR = r'E:\mine\python_workspace\datasets\Willi Richert-1400OS_Code/1400OS_03_Codes/data/toy'
+    DIR = r'E:\mine\python_workspace\datasets\Willi Richert-1400OS_Code/1400OS_03_Codes/items/toy'
     posts = [open(os.path.join(DIR, file)).read() for file in os.listdir(DIR)]  # file str list
     print("training posts : ",posts)
     # for post in posts: print(post)
@@ -113,7 +113,7 @@ def select_most_similar(new_post_mat, new_post, post_train_mats, posts):
     for i in range(0, post_train_mats.shape[0]):
         if posts[i] == new_post:
             continue
-        post_train_mat = post_train_mats[i]  # .getrow(i)
+        post_train_mat = post_train_mats[i]  # .getrow(line)
 
         dist = norm_euclidDist(new_post_mat, post_train_mat)
         print("post %d is similar to test_post with %.2f" % (i, dist))

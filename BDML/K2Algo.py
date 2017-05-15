@@ -34,7 +34,7 @@ TEST_FILE = r'./testingData.txt.txt'
 
 def alpha_ijk(i, pi_i, x, xi_vals, ri):
     '''
-    返回alpah_ijk计数矩阵ndarray，方便计算f(i, pi_i); phi：xi的parents集合pi_i值的迪卡尔积在数据集D中的出现
+    返回alpah_ijk计数矩阵ndarray，方便计算f(line, pi_i); phi：xi的parents集合pi_i值的迪卡尔积在数据集D中的出现
     '''
     index = list(pi_i)
     index.append(i)
@@ -80,7 +80,7 @@ def k2_algorithm(x, u=1):
     eps = 1e-30
     order = [3, 0, 1, 4, 2]
 
-    # for i in range(len(x[0])):
+    # for line in range(len(x[0])):
     for index, i in enumerate(order):
         # Pred = set(order[:index])  # xi的前继集合（比它编号小的xi）
         Pred = set(order)

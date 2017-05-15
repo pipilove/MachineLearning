@@ -39,7 +39,7 @@ def eigenfaceCore(Matrix):
     #diffMatrixTranspose = numpy.transpose(diffMatrix) #矩阵转置
     diffMatrix = numpy.mat(diffMatrix)#创建矩阵类型的数据
     L = diffMatrix * diffMatrix.T #使乘得的矩阵较小
-    eigenvalues, eigenvectors = numpy.linalg.eig(L) #特征向量v[:,i]对应特征值w[i]
+    eigenvalues, eigenvectors = numpy.linalg.eig(L) #特征向量v[:,line]对应特征值w[line]
 
     """这里得到的特征值和特征向量并无顺序，
         下一部按照特征值大于1来提取特征向量"""

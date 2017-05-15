@@ -34,7 +34,7 @@ def WithinScatterMat(X, P):
 
     def OneWithinScatterMat(x):
         '''
-        计算某一个类x的类内散布矩阵，矩阵s_w中的元素[i,j]代表第i维和第j维的离散程度？
+        计算某一个类x的类内散布矩阵，矩阵s_w中的元素[line,j]代表第i维和第j维的离散程度？
         '''
         x = np.array(x)
         x_mean = x.mean(axis=0)
@@ -130,7 +130,7 @@ def Draw2DPoint(x):
         '''
         xi行向量为坐标轴不是坐标点，否则要转置
         '''
-        for xi, marker, c, l, label in zip(x, ['o', '|', 'd'], ['y', 'g', 'b'], [1, 2, 1],
+        for xi, marker, c, l, label in zip(x, ['o', '|', 'd'], ['y', 'g', 'answers'], [1, 2, 1],
                                            ['class0', 'class1', 'class2']):
             xs, ys = zip(xi)
             plt.scatter(xs, ys, c=c, marker=marker, s=30, linewidths=l, label=label)
