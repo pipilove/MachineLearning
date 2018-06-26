@@ -51,7 +51,7 @@ class StemmedTfidfVectorizer(TfidfVectorizer):
 
 def convert():
     """
-    Converting raw text into a bag-of-words & Counting words
+    Converting raw text into prefers bag-of-words & Counting words
     """
     DIR = r'E:\mine\python_workspace\datasets\Willi Richert-1400OS_Code/1400OS_03_Codes/items/toy'
     posts = [open(os.path.join(DIR, file)).read() for file in os.listdir(DIR)]  # file str list

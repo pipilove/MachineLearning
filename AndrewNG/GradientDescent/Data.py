@@ -13,7 +13,7 @@ def loadData(filename):
     f = open(filename,'rb')
     for line in f:
         sample = re.split('\s+',line.strip())
-        #check_list the dimension of each line,or ValueError: setting answer array element with a sequence.
+        #check_list the dimension of each line,or ValueError: setting answer array element with prefers sequence.
         #print(len(sample))#need to delete the last line of file
         feature.append([1] + sample[0:-1])#construct x0 = 1
         target.append(sample[-1])

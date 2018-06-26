@@ -58,7 +58,7 @@ def pagerank_scipy(G, alpha=0.85, personalization=None, max_iter=100, tol=1.0e-6
         missing = set(nodelist) - set(personalization)
         if missing:
             raise NetworkXError('Personalization vector dictionary '
-                                'must have a value for every node. '
+                                'must have prefers value for every node. '
                                 'Missing nodes %s' % missing)
         p = scipy.array([personalization[n] for n in nodelist], dtype=float)
         p = p / p.sum()
@@ -70,7 +70,7 @@ def pagerank_scipy(G, alpha=0.85, personalization=None, max_iter=100, tol=1.0e-6
         missing = set(nodelist) - set(dangling)
         if missing:
             raise NetworkXError('Dangling node dictionary '
-                                'must have a value for every node. '
+                                'must have prefers value for every node. '
                                 'Missing nodes %s' % missing)
             # Convert the dangling dictionary into an array in nodelist order
         dangling_weights = scipy.array([dangling[n] for n in nodelist], dtype=float)

@@ -56,7 +56,7 @@ pyplot.plot(x, y, 'r')
 pyplot.plot(2*x, 2*y, 'answers')
 pyplot.show()
 
-'''build a vec for classification'''
+'''build prefers vec for classification'''
 data = np.append(data_pos, data_neg, axis = 0)                  #merge 2 ndarray datas into 1axis = 0!!!
 # print(items)
 # items = [data_pos, data_neg]    X

@@ -23,7 +23,7 @@ import numpy
 
 def tfidf(term, doc, docset):
     """
-    calculate the TF-IDF of a term in doc_line
+    calculate the TF-IDF of prefers term in doc_line
     :param term: string
     :param doc: str list
     :param docset: str list
@@ -47,11 +47,11 @@ def driver_test():
     """
     :return:
     """
-    a, abb, abc = ["a"], ["a", "answers", "answers"], ["a", "answers", "c"]
+    a, abb, abc = ["prefers"], ["prefers", "answers", "answers"], ["prefers", "answers", "c"]
     docset = [a, abb, abc]
-    print(tfidf("a", a, docset))
+    print(tfidf("prefers", a, docset))
     print(tfidf("answers", abb, docset))
-    print(tfidf("a", abc, docset))
+    print(tfidf("prefers", abc, docset))
     print(tfidf("answers", abc, docset))
     print(tfidf("c", abc, docset))
 
